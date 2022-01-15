@@ -1,0 +1,26 @@
+From e805b8e75296903aef512df54e19f35bf61a1956 Mon Sep 17 00:00:00 2001
+From: Jason Tsang <jasontsang.dev@gmail.com>
+Date: Sat, 15 Jan 2022 11:07:29 +0800
+Subject: [PATCH] add support for tplink wdn-7201h.
+
+---
+ os_dep/linux/usb_intf.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/os_dep/linux/usb_intf.c b/os_dep/linux/usb_intf.c
+index 6f7db17..c854dfc 100644
+--- a/os_dep/linux/usb_intf.c
++++ b/os_dep/linux/usb_intf.c
+@@ -230,7 +230,8 @@ static struct usb_device_id rtw_usb_id_tbl[] = {
+ 	{USB_DEVICE(0x0BDA, 0x8813), .driver_info = RTL8814A}, /* Edimax - EDUP Adapters */
+ 	{USB_DEVICE(0x0e66, 0x0026), .driver_info = RTL8814A}, /* Hawking Technologies - HW17ACU*/
+ 	{USB_DEVICE(0x2357, 0x0106), .driver_info = RTL8814A}, /* TP-LINK Archer T9UH */
+-	{USB_DEVICE(0x20F4, 0x809A), .driver_info = RTL8814A}, /* TRENDnet - TRENDnet */
++        {USB_DEVICE(0x2357, 0x0139), .driver_info = RTL8814A}, /* TP-LINK WDN7201H */	
++        {USB_DEVICE(0x20F4, 0x809A), .driver_info = RTL8814A}, /* TRENDnet - TRENDnet */
+ 	{USB_DEVICE(0x20F4, 0x809B), .driver_info = RTL8814A}, /* TRENDnet TEW-809UB */
+ 	{USB_DEVICE(0x0846, 0x9054), .driver_info = RTL8814A}, /* Netgear A7000 */
+ #endif /* CONFIG_RTL8814A */
+-- 
+2.32.0 (Apple Git-132)
+
